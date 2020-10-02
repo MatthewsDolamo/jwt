@@ -15,8 +15,8 @@ $fp2 = fopen("keys/rsa_public.pem", "r");
 $publicKey = fread($fp2, 8192);
 fclose($fp2);
 
+# Payload to sign using the private key
 /*
-     *Payload to sign using the private key
      * iat is Issued at
      * nbf is Not Before
      * exp is Expiration Time
@@ -35,17 +35,14 @@ $payload = array(
         "exp" => (time() + 120)
 );
 
-/*
-    * Signing the payload
- */
+# Signing the payload and print it
+
 $jwt = JWT::encode($payload, $privateKey, 'RS256');
 echo "Encoded<br>";
 print_r($jwt);
 
+# Verifying the payload
 
-/*
-    * Verifying the payload
- */
 $decoded = JWT::decode($jwt, $publicKey, array('RS256'));
 
 
