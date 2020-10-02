@@ -1,21 +1,21 @@
-# jwt
+## jwt
 A simple library to encode and decode JSON Web Tokens (JWT) in PHP
 
 
-# Reading the Private Key
+## Reading the Private Key
 
 $fp1 = fopen("keys/rsa_private.pem", "r");
 $privateKey = fread($fp1, 8192);
 fclose($fp1);
 
 
-# Reading the Public Key
+## Reading the Public Key
 
 $fp2 = fopen("keys/rsa_public.pem", "r");
 $publicKey = fread($fp2, 8192);
 fclose($fp2);
 
-# Payload to sign using the private key
+## Payload to sign using the private key
 /*
      * iat is Issued at
      * nbf is Not Before
@@ -35,13 +35,13 @@ $payload = array(
         "exp" => (time() + 120)
 );
 
-# Signing the payload and print it
+## Signing the payload and print it
 
 $jwt = JWT::encode($payload, $privateKey, 'RS256');
 echo "Encoded<br>";
 print_r($jwt);
 
-# Verifying the payload
+## Verifying the payload
 
 $decoded = JWT::decode($jwt, $publicKey, array('RS256'));
 
