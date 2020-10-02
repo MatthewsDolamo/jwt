@@ -1,5 +1,16 @@
 ## jwt
-A simple library to encode and decode JSON Web Tokens (JWT) in PHP
+A simple library to encode and decode JSON Web Tokens (JWT) in PHP using RSA key pair
+
+#### Generate an RSA key using OpenSSL command-line tools.
+
+You can generate a 2048-bit RSA key pair with the following commands:
+*openssl genpkey -algorithm RSA -out rsa_private.pem -pkeyopt rsa_keygen_bits:2048
+*openssl rsa -in rsa_private.pem -pubout -out rsa_public.pem
+
+#### These commands create the following public/private key pair:
+rsa_private.pem: The private key that must be securely stored and is used to sign the authentication JWT.
+rsa_public.pem: The public key that can be shared and is used to verify the signature of the authentication JWT.
+
 
 
 ## Reading the Private Key
