@@ -11,14 +11,11 @@ You can generate a 2048-bit RSA key pair with the following commands:
 rsa_private.pem: The private key that must be securely stored and is used to sign the authentication JWT.
 rsa_public.pem: The public key that can be shared and is used to verify the signature of the authentication JWT.
 
-
-
 ### Reading the Private Key
 
 	*$fp1 = fopen("keys/rsa_private.pem", "r");
 	*$privateKey = fread($fp1, 8192);
 	*fclose($fp1);
-
 
 ###  Reading the Public Key
 
