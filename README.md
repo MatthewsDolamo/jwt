@@ -24,16 +24,16 @@ A simple library to encode and decode JSON Web Tokens (JWT) in PHP
      * sub is Subject
      * aud Audience
  */
-	*$payload = array(
-       	*"LoggedInAs"=> "John Doe",
-       	*"ViewAs" => "John",
-       	*"AccountNo" =>  "1234 , 5678, 97879",
-       	*"iss" => "https://uat-absa.co.za:443/signer",
-      	*"aud" => "https://uat-absa.co.za:443/signer/ica",
-       	*"iat" => time() ,
-       	*"nbf" => time() ,
-       	*"exp" => (time() + 120)
-	*);
+$payload = array(
+        "LoggedInAs"=> "John Doe",
+        "ViewAs" => "John",
+        "AccountNo" =>  "1234 , 5678, 97879",
+        "iss" => "https://jwt.co.za:443/signer",
+        "aud" => "https://jwt.co.za:443/signer",
+        "iat" => time() ,
+        "nbf" => time() ,
+        "exp" => (time() + 120)
+);
 
 ## Signing the payload and print it
 
