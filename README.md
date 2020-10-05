@@ -13,15 +13,15 @@ rsa_public.pem: The public key that can be shared and is used to verify the sign
 
 ### Reading the Private Key
 
-	*$fp1 = fopen("keys/rsa_private.pem", "r");
-	*$privateKey = fread($fp1, 8192);
-	*fclose($fp1);
+	$fp1 = fopen("keys/rsa_private.pem", "r");
+	$privateKey = fread($fp1, 8192);
+	fclose($fp1);
 
 ###  Reading the Public Key
 
-	*$fp2 = fopen("keys/rsa_public.pem", "r");
-	*$publicKey = fread($fp2, 8192);
-	*fclose($fp2);
+	$fp2 = fopen("keys/rsa_public.pem", "r");
+	$publicKey = fread($fp2, 8192);
+	fclose($fp2);
 
 ###  Payload to sign using the private key
 /*
@@ -45,9 +45,9 @@ $payload = array(
 
 ###  Signing the payload and print it
 
-	*$jwt = JWT::encode($payload, $privateKey, 'RS256');
-	*echo "Encoded<br>";
-	*print_r($jwt);
+	$jwt = JWT::encode($payload, $privateKey, 'RS256');
+	echo "Encoded<br>";
+	print_r($jwt);
 
 ### Verifying the payload
 
