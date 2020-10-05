@@ -24,24 +24,24 @@ A simple library to encode and decode JSON Web Tokens (JWT) in PHP using RSA key
 	fclose($fp2);
 
 ###  Payload to sign using the private key
-/*
-     * iat is Issued at
-     * nbf is Not Before
-     * exp is Expiration Time
-     * iis is Issuer
-     * sub is Subject
-     * aud Audience
- */
-$payload = array(
-        "LoggedInAs"=> "John Doe",
-        "ViewAs" => "John",
-        "AccountNo" =>  "1234 , 5678, 97879",
-        "iss" => "https://jwt.co.za:443/signer",
-        "aud" => "https://jwt.co.za:443/signer",
-        "iat" => time() ,
-        "nbf" => time() ,
-        "exp" => (time() + 120)
-);
+       /*
+        * iat is Issued at
+        * nbf is Not Before
+        * exp is Expiration Time
+        * iis is Issuer
+        * sub is Subject
+        * aud Audience
+       */
+      $payload = array(
+		"LoggedInAs"=> "John Doe",
+		"ViewAs" => "John",
+		"AccountNo" =>  "1234 , 5678, 97879",
+		"iss" => "https://jwt.co.za:443/signer",
+		"aud" => "https://jwt.co.za:443/signer",
+		"iat" => time() ,
+		"nbf" => time() ,
+		"exp" => (time() + 120)
+	);
 
 ###  Signing the payload and print it
 
