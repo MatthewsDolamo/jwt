@@ -51,16 +51,15 @@ A simple library to encode and decode JSON Web Tokens (JWT) in PHP using RSA key
 
 ### Verifying the payload
 
-	*$decoded = JWT::decode($jwt, $publicKey, array('RS256'));
-
+	$decoded = JWT::decode($jwt, $publicKey, array('RS256'));
 
 		/*
  		NOTE: This will now be an object instead of an associative array. To get
 		 an associative array, you will need to cast it as such:
 		*/
-		* echo "<br>";
-		* echo "<br>";
-		* $decoded_array = (array) $decoded;
-		* print_r($decoded) ;
-		* echo "</pre>";
+		echo "<br>";
+		echo "<br>";
+		$decoded_array = (array) $decoded;
+		print_r($decoded) ;
+		echo "</pre>";
 
